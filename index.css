@@ -5,9 +5,10 @@
   font-family: "Montserrat", "poppins", "Roboto", sans-serif;
   scroll-behavior: smooth;
 }
-
-body {
-  overflow-x: hidden;
+:root{
+  --primary:#1a8bf5;
+  --secondary:#14dba9;
+  --textColor:#fff;
 }
 
 a,
@@ -24,6 +25,14 @@ li {
 
 header {
   width: 100vw;
+/*   height: 90px;
+  position: absolute;
+  opacity: 80%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #0537bebe; */
   height: 98px;
   position: fixed;
   /* padding: 10px; */
@@ -51,7 +60,8 @@ header {
 }
 
 .headerList {
-  width: 62%;
+  width: 45%;
+/*   width: 62%; */
   padding: 6px 12px 6px 6px;
 }
 .headerList.active{
@@ -81,6 +91,15 @@ header {
   align-items: center;
   justify-content: space-between;
 }
+.mainUl li {
+  transition: 0.8s;
+  /* color: #fff; */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.mainUl a {
+  padding: 4px;
+  color: #fff ;
 
 .mainUl a {
   padding: 4px;
@@ -91,13 +110,20 @@ header {
 
 .activePage {
   padding: 4px;
-  border-bottom: 2px solid #2b1caf;
-  color: #2b1caf;
+  border-bottom: 2px solid #1a8bf5;
+  color: #1a8bf5;
 }
 
 .mainUl a:hover {
+  border-bottom: 2px solid #1a8bf5;
+  color: #1a8bf5;
+/*   border-bottom: 2px solid #2b1caf;
+  color: #2b1caf; */
+}
+
+/* .mainUl a:hover {
   border-bottom: 2px solid #2b1caf;
-  color: #2b1caf;
+  color: #2b1caf; */
 }
 
 .mainUl li {
@@ -162,6 +188,7 @@ header {
   outline: none;
   border: transparent;
   padding: 4px;
+  background-color: transparent;
   color: rgba(57, 53, 61, 0.72);
 }
 
@@ -212,7 +239,9 @@ header {
 .mainContainer {
   width: 100vw;
   height: 800px;
-  background-image: url(./assets/background.jpg)  ;
+  /* background-image: url(./assets/background4.jpg); */
+  background:linear-gradient(118deg,#2287e3,#079572);
+/*   background-image: url(./assets/background.jpg)  ; */
   background-color: rgb(246, 247, 252);
   background-position: center center;
   background-repeat: no-repeat;
@@ -222,12 +251,23 @@ header {
   justify-content: center;
   padding: 4px 20px;
 }
+.mainContainer::before{
+  position: absolute;
+  content: "";
+  width: 100vw;
+  height: 800px;
+  /* background:linear-gradient(118deg,#2287e3,#079572); */
+  opacity: 15%;
+}
 
-
-/* .Container{
-
-} */
+.Container{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
 .Headings {
+/*   position: relative; */
   width: 60%;
   margin: 30px 2px 2px 20px;
 }
@@ -236,6 +276,8 @@ header {
 .Headings h1 {
   font-size: 40px;
   font-weight: 300;
+  color: var(--textColor);
+  text-shadow:0 0 6px #fff;
   color: #ffffff;
   text-shadow:0 0 2px #000;
 }
@@ -243,6 +285,8 @@ header {
 .Headings h2 {
   font-size: 90px;
   font-weight: bold; 
+/*   color: #010824;
+  text-shadow:0 0 6px #fff; */
   color: #ffffff;
   text-shadow:0 0 2px #000;
 }
@@ -250,8 +294,17 @@ header {
 .Headings p {
   font-size: 20px;
   letter-spacing: 1px;
+  line-height: 2rem;
   padding: 7px 20px;
+  color: var(--textColor);
+  text-shadow:0 0 2px #fff;
 }
+
+/* .btns {
+  padding: 10px 4px;
+  width: 55%;
+  padding: 7px 20px;
+} */
 
 .btns {
   padding: 8px;
@@ -262,6 +315,8 @@ header {
 
 .portfolioBtn {
   font-size: 18px;
+  /*padding: 12px 16px;
+  background-color: #05335e;*/
   padding: 6px 14px;
   background-color: #12b98e;
   color: #fff;
@@ -274,7 +329,9 @@ header {
 .portfolioBtn:hover,
 .read:hover {
   background-color: #000;
+  color: var(--primary);
   color: #12b98e;
+
 }
 
 .contactBtn {
@@ -289,6 +346,12 @@ header {
 
 .contactBtn:hover {
   color: #12b98e;
+}
+.imagee{
+  width: 50%;
+}
+.imagee img{
+  width: 65%;
 }
 
 .detailDiv {
